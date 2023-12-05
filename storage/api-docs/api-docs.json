@@ -1,0 +1,112 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Gallery",
+        "description": "Contoh API doc menggunakan API Gallery",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "ikhnif26@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "0.0.1"
+    },
+    "paths": {
+        "/greet": {
+            "get": {
+                "tags": [
+                    "greeting"
+                ],
+                "summary": "Coba API",
+                "description": "A sample greeting to test out the API",
+                "operationId": "greet",
+                "parameters": [
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "description": "nama depan",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "nama belakang",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/gallery": {
+            "get": {
+                "tags": [
+                    "gallery"
+                ],
+                "summary": "Tampilkan Gallery",
+                "description": "Ini adalah dokumentasi untuk menampilkan gallery",
+                "operationId": "gallery_index",
+                "responses": {
+                    "default": {
+                        "description": "Proses Berhasil"
+                    }
+                }
+            }
+        },
+        "/api/gallery/store": {
+            "post": {
+                "tags": [
+                    "gallery"
+                ],
+                "summary": "Tambah Gambar",
+                "description": "Ini adalah dokumentasi untuk menambah gambar pada gallery",
+                "operationId": "galllery.store",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "judul gambar",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "deskripsi gambar",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "image_url",
+                        "in": "query",
+                        "description": "gambar",
+                        "required": true,
+                        "schema": {
+                            "type": "image"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Proses Berhasil"
+                    }
+                }
+            }
+        }
+    }
+}
